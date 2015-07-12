@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ADCIShapeService.ASCIShapeService1" CodeBehind="ASCIShapeService1.svc.cs" %>

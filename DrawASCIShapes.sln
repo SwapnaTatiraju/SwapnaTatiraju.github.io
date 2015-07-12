@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawASCIShapes", "DrawASCIShapes\DrawASCIShapes.csproj", "{433273C5-BF8A-44FC-835A-93E0298B6AC3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DA6B9217-952F-4264-9D8F-EA20573D9093} = {DA6B9217-952F-4264-9D8F-EA20573D9093}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASCIShapeService", "ADCIShapeService\ASCIShapeService.csproj", "{DA6B9217-952F-4264-9D8F-EA20573D9093}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6A26D17E-3707-4801-A726-FC1E7DE7E559}"
+	ProjectSection(SolutionItems) = preProject
+		DrawASCIShapes.vsmdi = DrawASCIShapes.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DrawASCIShapes.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{433273C5-BF8A-44FC-835A-93E0298B6AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{433273C5-BF8A-44FC-835A-93E0298B6AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{433273C5-BF8A-44FC-835A-93E0298B6AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{433273C5-BF8A-44FC-835A-93E0298B6AC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA6B9217-952F-4264-9D8F-EA20573D9093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA6B9217-952F-4264-9D8F-EA20573D9093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA6B9217-952F-4264-9D8F-EA20573D9093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA6B9217-952F-4264-9D8F-EA20573D9093}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

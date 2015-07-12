@@ -1,0 +1,4 @@
+C:\Swapna\SwapnaC#Exp\DrawASCIShapes\ADCIShapeService\bin\ADCIShapeService.dll
+C:\Swapna\SwapnaC#Exp\DrawASCIShapes\ADCIShapeService\bin\ADCIShapeService.pdb
+C:\Swapna\SwapnaC#Exp\DrawASCIShapes\ADCIShapeService\obj\Debug\ADCIShapeService.dll
+C:\Swapna\SwapnaC#Exp\DrawASCIShapes\ADCIShapeService\obj\Debug\ADCIShapeService.pdb

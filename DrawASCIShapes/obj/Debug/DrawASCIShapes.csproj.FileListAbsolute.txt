@@ -1,0 +1,4 @@
+C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCIShapes\bin\DrawASCIShapes.dll
+C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCIShapes\bin\DrawASCIShapes.pdb
+C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCIShapes\obj\Debug\DrawASCIShapes.dll
+C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCIShapes\obj\Debug\DrawASCIShapes.pdb
