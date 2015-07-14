@@ -164,18 +164,9 @@ namespace DrawASCIShapes
         {
             try
             {
-                //string fileName = @"C:\Users\Public\ASCIShapeGeneratorHistory.txt";
-
                 string path = Server.MapPath("~/App_Data/ASCIShapeGeneratorHistory.txt");
                 File.AppendAllText(path, "Shape:" + RadioButtonList1.SelectedValue + ", Height:" + TxtBx_Height.Text + ", Display Lable:" +
-                        TXtBx_DisplayLable.Text + ", Label RowNum:" + TxtBx_rowNum.Text);
-
-                //using (StreamWriter file = new StreamWriter(fileName, true))
-                //{
-                //    file.WriteLine("Shape:" + RadioButtonList1.SelectedValue + ", Height:" + TxtBx_Height.Text + ", Display Lable:" +
-                //        TXtBx_DisplayLable.Text + ", Label RowNum:" + TxtBx_rowNum.Text);
-
-                //}
+                        TXtBx_DisplayLable.Text + ", Label RowNum:" + TxtBx_rowNum.Text + "\r" + "\n");
             }
             catch (Exception exe)
             {
@@ -642,7 +633,7 @@ namespace DrawASCIShapes
         {
             try
             {
-                string fileName = @"C:\Users\Public\ASCIShapeGeneratorHistory.txt";
+                string fileName = Server.MapPath("~/App_Data/ASCIShapeGeneratorHistory.txt");
 
                 if (File.Exists(fileName))
                 {
