@@ -1,9 +1,0 @@
-C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCITestProject\bin\Debug\DrawASCITestProject.dll
-C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCITestProject\bin\Debug\DrawASCITestProject.pdb
-C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCITestProject\bin\Debug\DrawASCIShapes.dll
-C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCITestProject\bin\Debug\DrawASCIShapes.pdb
-C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCITestProject\bin\Debug\DrawASCIShapes_Accessor.dll
-C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCITestProject\bin\Debug\DrawASCIShapes_Accessor.pdb
-C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCITestProject\obj\Debug\DrawASCITestProject.csprojResolveAssemblyReference.cache
-C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCITestProject\obj\Debug\DrawASCITestProject.dll
-C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCITestProject\obj\Debug\DrawASCITestProject.pdb

@@ -230,13 +230,50 @@ namespace DrawASCIShapes
             int height = int.Parse(TxtBx_Height.Text);
             List<string> SquarePattern = new List<string>();
             int TxtRowNum = 0;
+            string rowString = "";
+
             if (!string.IsNullOrEmpty(TxtBx_rowNum.Text))
             {
                 TxtRowNum = int.Parse(TxtBx_rowNum.Text);
             }
 
-            ASCIShapeServiceReference1.ASCIService1Client client = new ASCIShapeServiceReference1.ASCIService1Client();
-            SquarePattern = client.GenerateSquare(height, TXtBx_DisplayLable.Text, TxtRowNum).ToList();
+            //ASCIShapeServiceReference1.ASCIService1Client client = new ASCIShapeServiceReference1.ASCIService1Client();
+            //SquarePattern = client.GenerateSquare(height, TXtBx_DisplayLable.Text, TxtRowNum).ToList();
+
+            #region Generate Square Code
+
+            for (int i = 0; i < height; i++)
+            {
+                List<string> rows = new List<string>();
+                for (int j = 0; j < height; j++)
+                {
+                    rows.Add("X");
+                }
+
+                if ((!string.IsNullOrEmpty(TXtBx_DisplayLable.Text)) &&
+                      (TxtRowNum <= height) && i == (TxtRowNum - 1))
+                {
+                    for (int x = 0; x < height; x++)
+                    {
+                        char[] TxtChars = TXtBx_DisplayLable.Text.ToCharArray();
+                        if (x < TxtChars.Length)
+                        {
+                            rows[x] = TxtChars[x].ToString();
+                        }
+                        else
+                        {
+                            rows[x] = "X";
+                        }
+
+                    }
+                }
+
+                rowString = string.Join(" ", rows.ToArray());
+                SquarePattern.Add(rowString);
+            }
+
+            #endregion
+
 
             Div_Options.Visible = false;
             Btn_Redraw.Visible = true;
@@ -257,6 +294,7 @@ namespace DrawASCIShapes
             int height = int.Parse(TxtBx_Height.Text);
             int length = (2 * height - 1);
             int TxtRowNum = 0;
+            string rowString = "";
 
             List<string> SquarePattern = new List<string>();
 
@@ -265,8 +303,44 @@ namespace DrawASCIShapes
                 TxtRowNum = int.Parse(TxtBx_rowNum.Text);
             }
 
-            ASCIShapeServiceReference1.ASCIService1Client client = new ASCIShapeServiceReference1.ASCIService1Client();
-            SquarePattern = client.GenerateRectangle(height, TXtBx_DisplayLable.Text, TxtRowNum).ToList();
+            //ASCIShapeServiceReference1.ASCIService1Client client = new ASCIShapeServiceReference1.ASCIService1Client();
+            //SquarePattern = client.GenerateRectangle(height, TXtBx_DisplayLable.Text, TxtRowNum).ToList();
+
+            #region Generate Rectangle
+
+            for (int i = 0; i < height; i++)
+            {
+                List<string> rows = new List<string>();
+                for (int j = 0; j < length; j++)
+                {
+                    rows.Add("X");
+                }
+
+                //Inserting Text into the pattern
+                if ((!string.IsNullOrEmpty(TXtBx_DisplayLable.Text)) &&
+                      (TxtRowNum <= length) && i == (TxtRowNum - 1))
+                {
+                    for (int x = 0; x < height; x++)
+                    {
+                        char[] TxtChars = TXtBx_DisplayLable.Text.ToCharArray();
+                        if (x < TxtChars.Length)
+                        {
+                            rows[x] = TxtChars[x].ToString();
+                        }
+                        else
+                        {
+                            rows[x] = "X";
+                        }
+
+                    }
+                }
+
+                rowString = string.Join(" ", rows.ToArray());
+                SquarePattern.Add(rowString);
+            }
+
+            #endregion
+
             
             Div_Options.Visible = false;
             Btn_Redraw.Visible = true;
@@ -290,6 +364,8 @@ namespace DrawASCIShapes
             int width = Height;
             int maxCharaCount = Height - 1;
             int TxtRowNum = 0;
+            string newString = "";
+            int tempVal = 0;
 
             List<string> TrianglePattern = new List<string>();
 
@@ -298,8 +374,54 @@ namespace DrawASCIShapes
                 TxtRowNum = int.Parse(TxtBx_rowNum.Text);
             }
 
-            ASCIShapeServiceReference1.ASCIService1Client client = new ASCIShapeServiceReference1.ASCIService1Client();
-            TrianglePattern = client.GenerateTriangle(Height, TXtBx_DisplayLable.Text, TxtRowNum).ToList();
+            //ASCIShapeServiceReference1.ASCIService1Client client = new ASCIShapeServiceReference1.ASCIService1Client();
+            //TrianglePattern = client.GenerateTriangle(Height, TXtBx_DisplayLable.Text, TxtRowNum).ToList();
+
+            #region Generate Triangle
+
+            for (int rowCount = 0; rowCount < width; rowCount++)
+            {
+                List<string> rows = new List<string>();
+                List<int> columnNums = new List<int>();
+                tempVal = rowCount;
+
+                while (tempVal >= 0)
+                {
+                    columnNums.Add(tempVal);
+                    tempVal = tempVal - 2;
+                }
+
+                for (int columnCount = 0; columnCount < length; columnCount++)
+                {
+                    rows.Add("-");
+                }
+
+                foreach (int item in columnNums)
+                {
+                    rows[maxCharaCount - item] = "X";
+                    rows[maxCharaCount + item] = "X";
+
+                    //Inserting the Text into the pattern
+                    if (rowCount == TxtRowNum - 1)
+                    {
+                        char[] displayAry = TXtBx_DisplayLable.Text.ToCharArray();
+                        for (int i = 0; i < length; i++)
+                        {
+                            if (i < displayAry.Length && (i + 1) < displayAry.Length)
+                            {
+                                rows[maxCharaCount - item] = displayAry[i].ToString();
+                                rows[maxCharaCount + item] = displayAry[i + 1].ToString();
+                            }
+                        }
+                    }
+                }
+
+                newString = string.Join(" ", rows.ToArray());
+                TrianglePattern.Add(newString);
+            }
+
+            #endregion
+
 
             Div_Options.Visible = false;
             Btn_Redraw.Visible = true;
@@ -321,6 +443,8 @@ namespace DrawASCIShapes
             int length = (2 * Height) - 1;
             int baseCharaCount = Height - 1;
             int TxtRowNum = 0;
+            int tempVal = 0;
+            string newString = "";
 
             List<string> DiamondPattern = new List<string>();
 
@@ -330,8 +454,62 @@ namespace DrawASCIShapes
             }
             List<string> ReversePattern = new List<string>();
 
-            ASCIShapeServiceReference1.ASCIService1Client client = new ASCIShapeServiceReference1.ASCIService1Client();
-            DiamondPattern = client.GenerateDiamond1(Height, TXtBx_DisplayLable.Text, TxtRowNum).ToList();
+            //ASCIShapeServiceReference1.ASCIService1Client client = new ASCIShapeServiceReference1.ASCIService1Client();
+            //DiamondPattern = client.GenerateDiamond1(Height, TXtBx_DisplayLable.Text, TxtRowNum).ToList();
+
+            #region Upper Triangle in Diamond
+
+            for (int rowCount = 0; rowCount < Height; rowCount++)
+            {
+                List<string> rows = new List<string>();
+                List<int> columnNums = new List<int>();
+                tempVal = rowCount;
+
+                while (tempVal >= 0)
+                {
+                    columnNums.Add(tempVal);
+                    tempVal = tempVal - 2;
+                }
+
+                for (int columnCount = 0; columnCount < length; columnCount++)
+                {
+                    rows.Add("-");
+                }
+
+                foreach (int item in columnNums)
+                {
+                    if (item == 0)
+                    {
+                        rows[baseCharaCount - item] = "X";
+                    }
+                    else
+                    {
+                        rows[baseCharaCount - item] = "X";
+                        rows[baseCharaCount + item] = "X";
+                    }
+                }
+
+                newString = string.Join(" ", rows.ToArray());
+                DiamondPattern.Add(newString);
+            }
+
+            #endregion
+
+            #region Lower Triangle in Diamond
+
+            ReversePattern = DiamondPattern.ToList();
+            ReversePattern.Reverse();
+            ReversePattern.RemoveAt(0);
+            DiamondPattern.AddRange(ReversePattern);           
+
+            #endregion
+
+            //Inserting the Text into the pattern
+            if (TxtRowNum < DiamondPattern.Count)
+            {
+                DiamondPattern[TxtRowNum - 1] = DiamondPattern[TxtRowNum - 1].Replace('X', TXtBx_DisplayLable.Text[0]);
+            }
+
 
             Div_Options.Visible = false;
             Btn_Redraw.Visible = true;
@@ -353,6 +531,8 @@ namespace DrawASCIShapes
             int baseCharaCount = (int)Height / 2;
             int offSet = baseCharaCount;
             int TxtRowNum = 0;
+            int count = 0;
+            string newString = "";
 
             List<string> TrianglePattern = new List<string>();
 
@@ -361,8 +541,57 @@ namespace DrawASCIShapes
                 TxtRowNum = int.Parse(TxtBx_rowNum.Text);
             }
 
-            ASCIShapeServiceReference1.ASCIService1Client client = new ASCIShapeServiceReference1.ASCIService1Client();
-            TrianglePattern = client.GenerateDiamond2(Height, TXtBx_DisplayLable.Text, TxtRowNum).ToList();
+            //ASCIShapeServiceReference1.ASCIService1Client client = new ASCIShapeServiceReference1.ASCIService1Client();
+            //TrianglePattern = client.GenerateDiamond2(Height, TXtBx_DisplayLable.Text, TxtRowNum).ToList();
+
+            #region Diamond 2 code
+
+            for (int rowCount = 0; rowCount < Height; rowCount++)
+            {
+                List<string> rows = new List<string>();
+                count = baseCharaCount;
+
+                for (int columnCount = 0; columnCount < Height; columnCount++)
+                {
+                    rows.Add("X");
+                }
+
+                if (rowCount < baseCharaCount && rowCount != baseCharaCount)
+                {
+                    for (int i = 0; i < offSet; i++)
+                    {
+                        rows[baseCharaCount - count] = "-";
+                        rows[baseCharaCount + count] = "-";
+                        count--;
+                    }
+                    offSet--;
+                }
+                else
+                {
+                    count = baseCharaCount;
+                    for (int i = 0; i < offSet; i++)
+                    {
+                        rows[baseCharaCount - count] = "-";
+                        rows[baseCharaCount + count] = "-";
+                        count--;
+                    }
+                    offSet++;
+                }
+
+                newString = string.Join(" ", rows.ToArray());
+
+                //Inserting the Text into the pattern
+                if (rowCount == TxtRowNum - 1)
+                {
+                    newString = newString.Replace('X', TXtBx_DisplayLable.Text[0]);
+                }
+
+
+                TrianglePattern.Add(newString);
+            }
+
+            #endregion
+
 
             Div_Options.Visible = false;
             Btn_Redraw.Visible = true;
