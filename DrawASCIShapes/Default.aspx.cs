@@ -5,13 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Text;
 
 namespace DrawASCIShapes
 {
     public partial class _Default : System.Web.UI.Page
     {
-        public StreamWriter myStream = null;
-
         /// <summary>
         /// Page_Load Event Handler
         /// </summary>
@@ -167,18 +166,24 @@ namespace DrawASCIShapes
             {
                 string fileName = @"C:\Users\Public\ASCIShapeGeneratorHistory.txt";
 
-                myStream = File.CreateText(fileName);
-                string textToFile = "Shape:" + RadioButtonList1.SelectedValue + ", Height:" + TxtBx_Height.Text + ", Display Lable:" +
-                        TXtBx_DisplayLable.Text + ", Label RowNum:" + TxtBx_rowNum.Text;
-                myStream.WriteLine(textToFile);
-                myStream.Close();
-                
-                using (StreamWriter file = new StreamWriter(fileName, true))
-                {
-                    file.WriteLine("Shape:" + RadioButtonList1.SelectedValue + ", Height:" + TxtBx_Height.Text + ", Display Lable:" +
+                // Set a variable to the My Documents path. 
+                string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("Shape:" + RadioButtonList1.SelectedValue + ", Height:" + TxtBx_Height.Text + ", Display Lable:" +
                         TXtBx_DisplayLable.Text + ", Label RowNum:" + TxtBx_rowNum.Text);
 
+                // Write the stream contents to a new file
+                using (StreamWriter outfile = new StreamWriter(mydocpath + fileName))
+                {
+                    outfile.Write(sb.ToString());
                 }
+                
+                //using (StreamWriter file = new StreamWriter(fileName, true))
+                //{
+                //    file.WriteLine("Shape:" + RadioButtonList1.SelectedValue + ", Height:" + TxtBx_Height.Text + ", Display Lable:" +
+                //        TXtBx_DisplayLable.Text + ", Label RowNum:" + TxtBx_rowNum.Text);
+
+                //}
             }
             catch (Exception exe)
             {
