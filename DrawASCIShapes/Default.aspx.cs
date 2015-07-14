@@ -164,7 +164,7 @@ namespace DrawASCIShapes
         {
             try
             {
-                string fileName = "ASCIShapeGeneratorHistory.txt";
+                string fileName = @"C:\Users\Public\ASCIShapeGeneratorHistory.txt";
 
                 // Set a variable to the My Documents path. 
                 string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
