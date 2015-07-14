@@ -3,3 +3,8 @@ C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCIShapes\bin\DrawASCIShapes.pdb
 C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCIShapes\obj\Debug\DrawASCIShapes.dll
 C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCIShapes\obj\Debug\DrawASCIShapes.pdb
 C:\Swapna\SwapnaC#Exp\DrawASCIShapes\DrawASCIShapes\obj\Debug\DrawASCIShapes.csprojResolveAssemblyReference.cache
+C:\Users\dell\Documents\GitHub\SwapnaTatiraju.github.io\DrawASCIShapes\bin\DrawASCIShapes.dll
+C:\Users\dell\Documents\GitHub\SwapnaTatiraju.github.io\DrawASCIShapes\bin\DrawASCIShapes.pdb
+C:\Users\dell\Documents\GitHub\SwapnaTatiraju.github.io\DrawASCIShapes\obj\Debug\DrawASCIShapes.csprojResolveAssemblyReference.cache
+C:\Users\dell\Documents\GitHub\SwapnaTatiraju.github.io\DrawASCIShapes\obj\Debug\DrawASCIShapes.dll
+C:\Users\dell\Documents\GitHub\SwapnaTatiraju.github.io\DrawASCIShapes\obj\Debug\DrawASCIShapes.pdb

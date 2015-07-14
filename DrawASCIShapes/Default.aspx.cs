@@ -10,6 +10,8 @@ namespace DrawASCIShapes
 {
     public partial class _Default : System.Web.UI.Page
     {
+        public StreamWriter myStream = null;
+
         /// <summary>
         /// Page_Load Event Handler
         /// </summary>
@@ -164,6 +166,13 @@ namespace DrawASCIShapes
             try
             {
                 string fileName = @"C:\Users\Public\ASCIShapeGeneratorHistory.txt";
+
+                myStream = File.CreateText(fileName);
+                string textToFile = "Shape:" + RadioButtonList1.SelectedValue + ", Height:" + TxtBx_Height.Text + ", Display Lable:" +
+                        TXtBx_DisplayLable.Text + ", Label RowNum:" + TxtBx_rowNum.Text;
+                myStream.WriteLine(textToFile);
+                myStream.Close();
+                
                 using (StreamWriter file = new StreamWriter(fileName, true))
                 {
                     file.WriteLine("Shape:" + RadioButtonList1.SelectedValue + ", Height:" + TxtBx_Height.Text + ", Display Lable:" +
