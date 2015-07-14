@@ -164,20 +164,12 @@ namespace DrawASCIShapes
         {
             try
             {
-                string fileName = @"C:\Users\Public\ASCIShapeGeneratorHistory.txt";
+                //string fileName = @"C:\Users\Public\ASCIShapeGeneratorHistory.txt";
 
-                // Set a variable to the My Documents path. 
-                string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine("Shape:" + RadioButtonList1.SelectedValue + ", Height:" + TxtBx_Height.Text + ", Display Lable:" +
+                string path = Server.MapPath("~/App_Data/ASCIShapeGeneratorHistory.txt");
+                File.AppendAllText(path, "Shape:" + RadioButtonList1.SelectedValue + ", Height:" + TxtBx_Height.Text + ", Display Lable:" +
                         TXtBx_DisplayLable.Text + ", Label RowNum:" + TxtBx_rowNum.Text);
 
-                // Write the stream contents to a new file
-                using (StreamWriter outfile = new StreamWriter(mydocpath + fileName))
-                {
-                    outfile.Write(sb.ToString());
-                }
-                
                 //using (StreamWriter file = new StreamWriter(fileName, true))
                 //{
                 //    file.WriteLine("Shape:" + RadioButtonList1.SelectedValue + ", Height:" + TxtBx_Height.Text + ", Display Lable:" +
@@ -200,12 +192,12 @@ namespace DrawASCIShapes
         {
             try
             {
-                string fileName = @"C:\Users\Public\ASCIShapeGeneratorHistory.txt";
+                string path = Server.MapPath("~/App_Data/ASCIShapeGeneratorHistory.txt");
                 List<string> userHistory = new List<string>();
 
-                if (System.IO.File.Exists(fileName))
+                if (System.IO.File.Exists(path))
                 {
-                    userHistory = System.IO.File.ReadAllLines(fileName).ToList();
+                    userHistory = File.ReadAllLines(path).ToList();
                 }
 
                 if (userHistory.Count == 0)
